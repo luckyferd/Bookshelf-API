@@ -14,7 +14,7 @@ const addBookHandler =(request, h)=>{
   if (!name){
     const response = h.response({
       status: 'fail',
-      message:'Gagal menambahkan buku. Mohon isi nama buku.',
+      message:'Gagal menambahkan buku. Mohon isi nama buku',
     });
     response.code(400);
     return response;
@@ -22,7 +22,7 @@ const addBookHandler =(request, h)=>{
   if (readPage>pageCount){
     const response=h.response({
       status: 'fail',
-      message:'Gagal Menambahkan buku. readPage tidak boleh lebih besar dari pageCount',
+      message:'Gagal menambahkan buku. readPage tidak boleh lebih besar dari pageCount',
     });
     response.code(400);
     return response;
@@ -34,7 +34,8 @@ const addBookHandler =(request, h)=>{
   const updatedAt=insertedAt;
 
   //id di newbook baru ditambahkan
-  const newBook = { id, name,
+  const newBook = { id,
+    name,
     year,
     author,
     summary,
@@ -75,14 +76,14 @@ const getDetailBooksByIdHandler=(request, h)=>{
   const { bookId } = request.params;
   const book= books.find((n)=> n.id===bookId);
 
-  if (book !==undefined){
+  if (book !== undefined){
     return h.response({
       status: 'success',
       data : {
         book,
       },
     }).code(200);
-  }
+  };
 
   return h.response({
     status :'fail',
@@ -118,7 +119,7 @@ const updateBookByIdHandler=(request, h)=>{
     ...books[index],
     name, year, author, summary, publisher, pageCount, readPage, reading,
     finished:pageCount===readPage,
-    updatedAt:new Date.toISOString(),
+    updatedAt:new Date().toISOString(),
   };
 
   const response = h.response({
