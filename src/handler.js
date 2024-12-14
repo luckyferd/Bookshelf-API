@@ -66,7 +66,7 @@ const getAllBooksHanlder = (request, h) =>{
 
   if (name){
     const lowerCaseName=name.toLowerCase();
-    filterBook=lowerCaseName.filter((book)=>book.name.toLowerCase().includes(lowerCaseName));
+    filterBook=filterBook.filter((book)=>book.name.toLowerCase().includes(lowerCaseName));
 
   };
 
