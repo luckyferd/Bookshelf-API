@@ -66,7 +66,7 @@ const getAllBooksHanlder = () =>({
 
 const getAllBooksByIdHandler=(request, h)=>{
   const { bookId } = request.params;
-  const book= books.find((n)=> n.id===bookId)[0];
+  const book= books.find((n)=> n.id===bookId);
 
   if (!book){
     return h.response({
