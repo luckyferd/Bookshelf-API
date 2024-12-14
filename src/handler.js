@@ -33,8 +33,8 @@ const addBookHandler =(request, h)=>{
   const createdAt=new Date().toISOString();
   const updatedAt=createdAt;
 
-
-  const newBook = { name,
+  //id di newbook baru ditambahkan
+  const newBook = { id, name,
     year,
     author,
     summary,
@@ -59,7 +59,7 @@ const addBookHandler =(request, h)=>{
 };
 
 const getAllBooksHanlder = (request, h) =>{
-  const formatBook=books.map(({ id, name, publisher })=>({
+  const formatBook = books.map(({ id, name, publisher })=>({
     id, name, publisher }));
 
   return h.response({
@@ -86,7 +86,7 @@ const getDetailBooksByIdHandler=(request, h)=>{
 
   return h.response({
     status :'fail',
-    message :'Buku tidak ditemuka',
+    message :'Buku tidak ditemukan',
   }).code(404);
 };
 
