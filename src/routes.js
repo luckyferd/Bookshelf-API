@@ -1,6 +1,6 @@
 const { addBookHandler,
   getAllBooksHanlder,
-  getAllBooksByIdHandler,
+  getDetailBooksByIdHandler,
   updateBookByIdHandler,
   deleteBookByIdHandler
 }=require('./handler');
@@ -18,7 +18,7 @@ const routes=[
   {
     method:'GET',
     path:'/books/{bookId}',
-    handler: getAllBooksByIdHandler
+    handler: getDetailBooksByIdHandler
   },
   {
     method:'PUT',
