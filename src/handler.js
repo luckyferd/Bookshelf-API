@@ -43,7 +43,7 @@ const addBookHandler =(request, h)=>{
     readPage,
     finished,
     reading,
-    createdAt,
+    insertedAt,
     updatedAt };
 
   books.push(newBook);
