@@ -58,11 +58,18 @@ const addBookHandler =(request, h)=>{
 
 };
 
-const getAllBooksHanlder = () =>({
-  status: 'success',
-  data: {
-    books: books.map(({ id, name, publisher })=>({ id, name, publisher })), },
-});
+const getAllBooksHanlder = (request, h) =>{
+  const formatBook=books.map(({ id, name, publisher })=>({
+    id, name, publisher }));
+
+  return h.response({
+    status : 'success',
+    data :{
+      books:formatBook
+    }
+  }).code(200);
+
+};
 
 const getDetailBooksByIdHandler=(request, h)=>{
   const { bookId } = request.params;
