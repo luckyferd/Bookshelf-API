@@ -131,9 +131,9 @@ const updateBookByIdHandler=(request, h)=>{
 };
 
 const deleteBookByIdHandler=(request, h) => {
-  const { id }=request.params;
+  const { bookId }=request.params;
 
-  const index = books.findIndex((book)=>book.id===id);
+  const index = books.findIndex((book)=>book.id===bookId);
 
   if (index !== -1){
     books.splice(index, 1);
