@@ -75,7 +75,7 @@ const getDetailBooksByIdHandler=(request, h)=>{
   const { bookId } = request.params;
   const book= books.find((n)=> n.id===bookId);
 
-  if (book){
+  if (book !==undefined){
     return h.response({
       status: 'success',
       data : {
